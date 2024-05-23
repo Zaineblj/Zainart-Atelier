@@ -1,0 +1,145 @@
+* {
+    margin: 1%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffa07a;
+}
+
+.container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(254, 251, 246);
+    padding: 10px 60px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.message-container {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+    display: none; /* Caché initialement */
+    color: white;
+    width: 90%;
+    max-width: 500px;
+}
+
+.email-input {
+    width: 80%;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1em;
+    display: none;
+    margin-left: 50px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.849);
+    outline: 0;
+    color: white;
+    background-color: transparent;
+    transition: border-color 0.2s;
+}
+
+.message-error{
+    color: #ffa07a;
+}
+
+.send-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+    background-color: pink;
+    justify-content: center;
+    margin-left: 180px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+}
+
+.message {
+    font-size: 1.5em;
+    color: white;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.game {
+    width: 470px;
+    height: 330px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.card {
+    width: calc(20% - 2px);
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .front {
+    transform: rotateY(180deg);
+}
+
+.card .back {
+    background: url('moi/ZainartCard.jpg') no-repeat center center/cover;
+    transform: rotateY(0deg);
+}
+
+.card.flipped .front {
+    transform: rotateY(0deg);
+}
+
+.card.flipped .back {
+    transform: rotateY(180deg);
+}
+
+.timer {
+    font-size: 2em;
+    color: black;
+}
